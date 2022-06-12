@@ -1,0 +1,10 @@
+receber dados de numero da prova e quantidade de nadadores
+se numero de prova e quantidade de nadadores forem diferentes de zero
+    então receber nome, tempo, classificao e clube para cada um nadadores
+para cada nadador, atribuir a pontuacao de acordo com a classificao
+se o nadador pertencer o clube a, incrementar os pontos em uma variavel pontos clube A.
+     Se pertencer ao clube B, acrscentar os pontos para clube B
+enquanto o numero da prova e a quantidade de nadadores for diferente de zero, repita os passos anteriores
+se o numero da provao ou a quantidade de nadadores for diferente de zero, verifique qual clube tem maior numero de pontos
+imprima o nome do clube vencedor
+    obs: se os pontos forem iguais, imprima "empate"
