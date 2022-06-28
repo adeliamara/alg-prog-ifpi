@@ -5,12 +5,8 @@ export const input = prompt({
     sigint: false
 })
 
-export function print(mensagem, ...optionalParams){
-    console.log(mensagem, ...optionalParams)
-}
 
-
-export function loadfile(arquivo) {
+export function loadFile(arquivo) {
     try {
         const data = fs.readFileSync(arquivo, 'utf-8')
         return data
@@ -19,39 +15,25 @@ export function loadfile(arquivo) {
     }
 }
 
-
-export function get_number(msg) {
-    let value = Number(input(msg))
+export function get_number(mensagem) {
+    let value = Number(input(mensagem))
     if (isNaN(value)) {
-        console.log('Favor digite um valor numérico')
-        value = get_number(msg)
+        console.log('Favor digite um valor numérico: ')
+        value = get_number(mensagem)
     }
     return value
 }
 
-export function get_number_positive(msg){
-    let number = get_number(msg)
+export function get_number_positive(mensagem){
+    let number = get_number(mensagem)
     
-    while (!(number >= 0)){
-        console.log(`O número (${number}) nao é positivo. Digite um numero positivo`)
-        number = get_number(msg)
+    while (!(number > 0)){
+        console.log(`O número (${number}) nao é positivo. Digite um numero positivo: `)
+        number = get_number(mensagem)
     }
 
     return number
 
-}
-
-export function get_text(msg) {
-    const value = input(msg)
-    if (value.length === 0) {
-        console.log('Texto vazio. Digite algo.')
-        return get_text(msg)
-    }
-    return value
-}
-
-export function get_random_number(min = 0, max = 100){
-    return Math.round(Math.random() * (max - min)) + min
 }
 
 export function get_number_negative(mensagem){
@@ -76,4 +58,8 @@ export function get_number_in_range(mensagem, minimo, maximo){
 
     return number
 
+}
+
+export function get_random_number(min = 0, max = 100){
+    return Math.floor(Math.random() * (max - min)) + min
 }
