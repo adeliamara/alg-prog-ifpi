@@ -6,14 +6,17 @@ function main() {
     const tamanho = get_number_positive('Insira o tamanho do vetor: ')
     var vetor = createNewArray(tamanho)
 
-    fillArrayRandomNumber(-10,10,vetor)
-    showVetor('vetor original:', vetor)
+    fillArrayWithFibonacci(vetor)
 
-    sortArrayBooble(vetor)
-    showVetor('vetor ordenado:', vetor)
-
+    showVetor('sequencia de fibonacci: ', vetor)
 }
 
-
+function fillArrayWithFibonacci(array){
+    array[0] = 0
+    array[1] = 1
+    for(let i = 2; i < array.length; i++){
+        array[i] = array[i-1] + array[i-2]
+    }
+}
 
 main()
